@@ -5,6 +5,7 @@ if (process && process.env && process.env.CONSOLE_LOG) {
 import React, {Component} from 'react';
 import ModuleA from 'modules/module-a';
 import FontTest from 'modules/font-test';
+import App from 'app';
 
 import style from './style';
 class Root extends Component {
@@ -32,6 +33,7 @@ class Root extends Component {
         return(
             <div className={style['module-style']}>
                 <p>Root Component</p>
+                <App />
                 <button onClick={this.handleClick_lazyLoad.bind(this)}>click to lazy load</button>
                 <div className="lazy-load-container">
                     { this.state.module_twitter ? this.state.module_twitter : null }
