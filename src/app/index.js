@@ -10,6 +10,7 @@ import rootReducer from './reducers'
 
 import FilteredTodos from 'app/containers/filtered-todos';
 import AddTodo from 'app/containers/add-todo';
+import Control from 'app/components/control-section';
 
 const store = createStore(rootReducer);
 store.subscribe((...args)=>{
@@ -29,7 +30,7 @@ const App = () => (
                     <FilteredTodos />
                 </div>
                 <div className="filter-ctr-container">
-                    filter control
+                    <Control />
                 </div>
             </div>
         </div>

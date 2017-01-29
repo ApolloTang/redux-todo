@@ -1,11 +1,11 @@
 import {combineReducers} from 'redux';
 
-import visibilitySetting from  './visibilitySetting';
+import todoListControl from  './todo-list-control';
 import todos from  './todos';
 
 const rootReducer = combineReducers({
-    visibilitySetting,
-    todos
+    todos,
+    todoListControl
 });
 
 export default rootReducer;
