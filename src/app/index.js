@@ -4,36 +4,29 @@ if (process && process.env && process.env.CONSOLE_LOG) {
 
 import React from 'react'
 import { render } from 'react-dom'
-import { Provider } from 'react-redux'
-import { createStore } from 'redux'
-import rootReducer from './reducers'
 
 import FilteredTodos from 'app/containers/filtered-todos';
 import AddTodo from 'app/containers/add-todo';
 import Control from 'app/components/control-section';
 
-const store = createStore(rootReducer);
-store.subscribe(()=>{
-    console.log('store change', store.getState())
-})
-
 import style from './style';
-const App = () => (
-    <Provider store={store}>
+const App = ({ params }) => {
+    console.log('params: ', params);
+    return (
         <div className={`app ${style['module-style']}`}>
             <div className="layout">
                 <div className="add-todo-container">
                     <AddTodo />
                 </div>
                 <div className="todos-list-container">
-                    <FilteredTodos />
+                    <FilteredTodos filterType={params.filterType || 'all'}/>
                 </div>
                 <div className="filter-ctr-container">
                     <Control />
                 </div>
             </div>
-        </div>
-    </Provider>
-);
+            </div>
+    );
+};
 
 export default App;
