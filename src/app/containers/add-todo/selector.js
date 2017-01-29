@@ -1,4 +1,4 @@
-import {toggleTodo as Action_toggleTodo} from 'app/actions';
+import {addTodo as Action_addTodo } from 'app/actions';
 
 function getFilteredTodos(todos, visibilityFilter) {
     return [{text:'todo 1'}, {text:'todo 2'}];
@@ -13,9 +13,7 @@ const mapStoreToProps = (store) => {
 
 const mapDispatchToProps = (dispatch) => (
     {
-        dispatch_toggleTodo(id) {
-            dispatch( Action_toggleTodo(id) );
-        }
+        dispatch_addTodo(text) { dispatch( Action_addTodo(text) ); }
     }
 );
 
