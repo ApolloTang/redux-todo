@@ -1,3 +1,4 @@
+import _ from 'lodash';
 
 const todos = (state = {}, action) => {
     console.log(action.type);
@@ -11,6 +12,13 @@ const todos = (state = {}, action) => {
                 }
             }
 
+        }
+        case 'REMOVE_TODO': {
+            const nextState = {
+                ...state
+            }
+            delete nextState[action.id];
+            return nextState;
         }
       default:
           return state
