@@ -16,6 +16,6 @@ import {render} from 'react-dom';
 import style from 'main.less';
 import fonts from 'common/fonts';
 
-import App from 'app';
-const appContainer = document.getElementById("app-container");
-render( <App />, appContainer);
+import Root from 'modules/root';
+const appContainer = document.getElementById("root-container");
+render( <Root />, appContainer);
