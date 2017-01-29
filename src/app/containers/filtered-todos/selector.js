@@ -2,13 +2,28 @@ import _ from 'lodash';
 import  * as Action from 'app/actions';
 
 
-function getFilteredTodos(todos, visibilityFilter) {
-    const todos_array = _(todos).map(v=>v).value();
+function getFilteredTodos(todos, todoListControl) {
+    const todos_array = _(todos)
+        .map(todo=>todo)
+        .filter( todo=>{
+            const filter = todoListControl.filter;
+            switch (filter) {
+                case 'SHOW_ALL':
+                    return true;
+                    break;
+                case 'SHOW_COMPLETED':
+                    return todo.complete
+                    break;
+                case 'SHOW_ACTIVE':
+                    return !todo.complete
+                    break;
+            }
+        }).value();
     return todos_array;
 }
 
 const mapStoreToProps = (store) => {
-    const filteredTodos = getFilteredTodos(store.todos, store.visibilityFilter);
+    const filteredTodos = getFilteredTodos(store.todos, store.todoListControl);
     return {
         todos: filteredTodos
     }
