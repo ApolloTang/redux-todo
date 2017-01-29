@@ -13,8 +13,7 @@ import AddTodo from 'app/containers/add-todo';
 import Control from 'app/components/control-section';
 
 const store = createStore(rootReducer);
-store.subscribe((...args)=>{
-    console.log('store change', store)
+store.subscribe(()=>{
     console.log('store change', store.getState())
 })
 
