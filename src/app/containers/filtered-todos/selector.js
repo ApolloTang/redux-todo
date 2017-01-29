@@ -2,19 +2,18 @@ import _ from 'lodash';
 import  * as Action from 'app/actions/todos';
 
 
-function getFilteredTodos(todos, todoListControl) {
+function getFilteredTodos(todos, filterType) {
     const todos_array = _(todos)
         .map(todo=>todo)
         .filter( todo=>{
-            const filter = todoListControl.filter;
-            switch (filter) {
-                case 'SHOW_ALL':
+            switch (filterType) {
+                case 'all':
                     return true;
                     break;
-                case 'SHOW_COMPLETED':
+                case 'completed':
                     return todo.complete
                     break;
-                case 'SHOW_ACTIVE':
+                case 'active':
                     return !todo.complete
                     break;
             }
@@ -22,8 +21,8 @@ function getFilteredTodos(todos, todoListControl) {
     return todos_array;
 }
 
-const mapStoreToProps = (store) => {
-    const filteredTodos = getFilteredTodos(store.todos, store.todoListControl);
+const mapStoreToProps = (store, ownProps) => {
+    const filteredTodos = getFilteredTodos(store.todos, ownProps.filterType);
     return {
         todos: filteredTodos
     }
@@ -32,11 +31,9 @@ const mapStoreToProps = (store) => {
 const mapDispatchToProps = (dispatch) => (
     {
         dispatch_complete(id) {
-            console.log('conplete', Action)
             dispatch( Action.toggleTodo(id) );
         },
         dispatch_remove(id) {
-            console.log('remove', Action)
             dispatch( Action.removeTodo(id) );
         }
     }

@@ -5,15 +5,15 @@ const ControlSection = () => (
   <p>
     Show:
     {" "}
-    <TodoListFilterSettingCtrl filterType="SHOW_ALL">
+    <TodoListFilterSettingCtrl filterType="all">
       All
     </TodoListFilterSettingCtrl>
     {", "}
-    <TodoListFilterSettingCtrl filterType="SHOW_ACTIVE">
+    <TodoListFilterSettingCtrl filterType="active">
       Active
     </TodoListFilterSettingCtrl>
     {", "}
-    <TodoListFilterSettingCtrl filterType="SHOW_COMPLETED">
+    <TodoListFilterSettingCtrl filterType="completed">
       Completed
     </TodoListFilterSettingCtrl>
   </p>

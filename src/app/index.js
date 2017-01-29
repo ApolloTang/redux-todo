@@ -11,7 +11,6 @@ import Control from 'app/components/control-section';
 
 import style from './style';
 const App = ({ params }) => {
-    console.log('params: ', params);
     return (
         <div className={`app ${style['module-style']}`}>
             <div className="layout">
@@ -25,7 +24,7 @@ const App = ({ params }) => {
                     <Control />
                 </div>
             </div>
-            </div>
+        </div>
     );
 };
 

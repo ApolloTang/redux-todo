@@ -1,7 +1,15 @@
+import React from 'react'
+import { Link } from 'react-router';
 import {connect} from 'react-redux';
 
-import {mapStoreToProps, mapDispatchToProps} from './selector';
+import {mapStoreToProps} from './selector';
 
-import Link  from 'app/widgets/link';
+const TodoListFilterSettingCtrl = ({children, filterType}) => (
+    <Link
+        to={filterType}
+        activeStyle={{ textDecoration: 'none', color:'red' }} >
+        {children}
+    </Link>
+);
 
-export default connect(mapStoreToProps, mapDispatchToProps)(Link);
+export default connect(mapStoreToProps)(TodoListFilterSettingCtrl);
