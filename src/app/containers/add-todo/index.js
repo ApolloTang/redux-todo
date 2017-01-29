@@ -9,15 +9,20 @@ const AddTodo = ({dispatch_addTodo}) => {
 // const AddTodo = (...args) => {
     // console.log(args)
 
-    let input;
+    let inputValue;
+    let inputNode;
     return (
         <div>
             <form onSubmit={
                 e=>{
                     e.preventDefault();
-                    dispatch_addTodo('asdfdf');
+                    dispatch_addTodo(inputValue);
+                    inputNode.value = '';
                 }} >
-                <input onChange={e=>{console.log('inputChange')}} />
+                <input
+                    ref={ thisNode=>{ inputNode = thisNode }}
+                    onChange={e=>{ e.preventDefault(); inputValue=e.target.value;}}
+                />
                 <button type="submit"> Add Todo </button>
             </form>
         </div>
