@@ -1,9 +1,13 @@
 import React from 'react';
 
-const TodoItem = ({text, handleComplete, handleRemove}) => {
+const TodoItem = ({text, handleComplete, handleRemove, complete}) => {
     return (
         <li>
-            <span onClick={handleComplete}>{text}</span>
+            <span
+                style={{ textDecoration: complete ? 'line-through':'none' }}
+                onClick={handleComplete}>
+                {text}
+            </span>
             <span onClick={handleRemove}>[x]</span>
         </li>
     );

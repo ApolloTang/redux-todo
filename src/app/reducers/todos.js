@@ -8,7 +8,8 @@ const todos = (state = {}, action) => {
                 ...state,
                 [action.id]: {
                     text: action.text,
-                    id: action.id
+                    id: action.id,
+                    complete: false
                 }
             }
 
@@ -18,6 +19,14 @@ const todos = (state = {}, action) => {
                 ...state
             }
             delete nextState[action.id];
+            return nextState;
+        }
+        case 'TOGGLE_TODO': {
+            const nextState = {
+                ...state
+            }
+            const prevComplete = state[action.id].complete;
+            nextState[action.id].complete = !prevComplete;
             return nextState;
         }
       default:

@@ -12,6 +12,7 @@ const TodoList = (props) => {
                         key={i}
                         id={todo.id}
                         text={todo.text}
+                        complete={todo.complete}
                         handleRemove={()=>{props.dispatch_remove(todo.id)}}
                         handleComplete={()=>{props.dispatch_complete(todo.id)}}
                     />);
