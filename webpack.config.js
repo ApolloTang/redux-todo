@@ -27,6 +27,7 @@ const config_fn = env => {                                                  // [
 
     const config = {
         devServer: {
+            historyApiFallback: true,
             host: webpackDevServer_host,
             port: webpackDevServer_port
         },
