@@ -1,7 +1,10 @@
+import _ from 'lodash';
 import {toggleTodo as Action_toggleTodo} from 'app/actions';
 
+
 function getFilteredTodos(todos, visibilityFilter) {
-    return [{text:'todo 1'}, {text:'todo 2'}];
+    const todos_array = _(todos).map(v=>v).value();
+    return todos_array;
 }
 
 const mapStoreToProps = (store) => {
