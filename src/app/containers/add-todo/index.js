@@ -6,9 +6,6 @@ import {mapStoreToProps, mapDispatchToProps} from './selector';
 
 
 const AddTodo = ({dispatch_addTodo}) => {
-// const AddTodo = (...args) => {
-    // console.log(args)
-
     let inputValue;
     let inputNode;
     return (
@@ -23,7 +20,7 @@ const AddTodo = ({dispatch_addTodo}) => {
                     ref={ thisNode=>{ inputNode = thisNode }}
                     onChange={e=>{ e.preventDefault(); inputValue=e.target.value;}}
                 />
-                <button type="submit"> Add Todo </button>
+                <button type="submit">Add Todo</button>
             </form>
         </div>
     );
