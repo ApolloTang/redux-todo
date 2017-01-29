@@ -16,7 +16,17 @@ import style from './style';
 const App = () => (
     <Provider store={store}>
         <div className={`app ${style['module-style']}`}>
-            <FilteredTodos />
+            <div className="layout">
+                <div className="add-todo-container">
+                    add to do
+                </div>
+                <div className="todos-list-container">
+                    <FilteredTodos />
+                </div>
+                <div className="filter-ctr-container">
+                    add to do
+                </div>
+            </div>
         </div>
     </Provider>
 );

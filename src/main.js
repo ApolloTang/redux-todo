@@ -17,5 +17,5 @@ import style from 'main.less';
 import fonts from 'common/fonts';
 
 import App from 'app';
-const appContainer = document.getElementById("app");
+const appContainer = document.getElementById("app-container");
 render( <App />, appContainer);
