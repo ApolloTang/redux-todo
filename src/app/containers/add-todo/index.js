@@ -1,7 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
 
-import {addTodo as Action_addTodo} from 'app/actions';
 import {mapStoreToProps, mapDispatchToProps} from './selector';
 
 

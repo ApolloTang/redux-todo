@@ -1,5 +1,5 @@
 import _ from 'lodash';
-import  * as Action from 'app/actions';
+import  * as Action from 'app/actions/todos';
 
 
 function getFilteredTodos(todos, todoListControl) {
