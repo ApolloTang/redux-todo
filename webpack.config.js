@@ -32,7 +32,7 @@ const config_fn = env => {                                                  // [
             port: webpackDevServer_port
         },
         performance: {
-            hints: (info === 'true')                                        // [11]
+            hints: (info === 'true') ? 'warning' : false                    // [11]
         },
         context: absolutePath_sourceFolder,                                 // [2]
         entry: {                                                            // [9]
