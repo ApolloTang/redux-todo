@@ -1,5 +1,5 @@
 import _ from 'lodash';
-import {toggleTodo as Action_toggleTodo} from 'app/actions';
+import  * as Action from 'app/actions';
 
 
 function getFilteredTodos(todos, visibilityFilter) {
@@ -16,8 +16,13 @@ const mapStoreToProps = (store) => {
 
 const mapDispatchToProps = (dispatch) => (
     {
-        dispatch_toggleTodo(id) {
-            dispatch( Action_toggleTodo(id) );
+        dispatch_complete(id) {
+            console.log('conplete', Action)
+            dispatch( Action.toggleTodo(id) );
+        },
+        dispatch_remove(id) {
+            console.log('remove', Action)
+            dispatch( Action.removeTodo(id) );
         }
     }
 );

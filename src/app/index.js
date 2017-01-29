@@ -13,6 +13,7 @@ import AddTodo from 'app/containers/add-todo';
 
 const store = createStore(rootReducer);
 store.subscribe((...args)=>{
+    console.log('store change', store)
     console.log('store change', store.getState())
 })
 
